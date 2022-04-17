@@ -22,3 +22,27 @@ for (let count of skills) {
   skill.innerHTML = count;
   skillList.appendChild(skill);
 }
+
+let messageForm = document.querySelector("#leave_message");
+
+messageForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const userName = event.target.name.value;
+  const userEmail = event.currentTarget.email.value;
+  const userMessage = event.currentTarget.message.value;
+  console.log(userName, userEmail, userMessage);
+  let messageSection = document.querySelector("#messages");
+  let messageList = messageSection.querySelector("ul");
+  let newMesssage = document.createElement("li");
+  newMesssage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: <span>${userMessage}</span> <br>`;
+  let removeButton = document.createElement("button");
+  removeButton.textContent = "remove";
+  removeButton.type = "button";
+  removeButton.addEventListener("click", (event) => {
+    let entry = event.target.parentNode;
+    entry.remove();
+  });
+  newMesssage.appendChild(removeButton);
+  messageList.appendChild(newMesssage);
+  event.target.reset();
+});
