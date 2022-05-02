@@ -6,12 +6,16 @@ copyright.innerHTML = `&copy;Anna Liskovets  ${thisYear}`;
 footer.appendChild(copyright);
 
 let skills = [
-  "creativity",
-  "critical thinking",
-  "analytical skills",
+  "JavaScript",
   "HTML",
   "CSS",
-  "JavaScript",
+  "HTML",
+  "SQL",
+  "Jira",
+  "Confluence",
+  "Problem Solving",
+  "Agile Management",
+  "Business Analysis",
 ];
 
 let skillSection = document.querySelector("#skills");
