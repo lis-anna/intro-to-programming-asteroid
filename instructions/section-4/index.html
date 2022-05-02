@@ -10,19 +10,24 @@
 
   <body>
     <main>
-      <div id="heading-image"></div>
-      <div class="menu">
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#connect">Connect</a></li>
-          </ul>
-        </nav>
-      </div>
+      <header class="header">
+        <h2 class="logo-header">
+          <a href="https://www.linkedin.com/in/anna-liskovets/">
+            <img class="logo" src="./img/me.jpeg" />
+          </a>
+          <span class="name">Anna Liskovets</span>
+        </h2>
+      </header>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#connect">Connect</a></li>
+        </ul>
+      </nav>
       <section>
-        <h2 id="about">About</h2>
+        <h2 id="about"></h2>
         <p class="text-about">
           Hi. I'm Anna. <br />
           I love traveling, hiking in mountains and baking for my family and
@@ -43,24 +48,35 @@
         <h2 id="experience">Experience</h2>
 
         <ul class="list">
-          <li>
-            <strong>Requirements Engineering Consultant</strong> &mdash; 2022
+          <li class="job">
+            <span><strong>Requirements Engineering Consultant</strong></span>
+            <span class="date">Jan 2022 - Present</span>
           </li>
-          <li>
-            <strong>Product Owner </strong> at Cataneo GmbH &mdash; 2020 - 2021
+          <li class="job">
+            <span><strong>Product Owner</strong> &mdash; Cataneo GmbH </span>
+            <span class="date">2020 - 2021</span>
           </li>
-          <li>
-            <strong>Product Owner </strong> at AlphaPet &mdash; 2017 - 2020
+          <li class="job">
+            <span><strong>Product Owner </strong> &mdash; AlphaPet</span>
+            <span class="date"> 2017 - 2020</span>
           </li>
-          <li>
-            <strong>Senior Systems Analyst</strong> at Sberbank &mdash; 2015 -
-            2017
+          <li class="job">
+            <span
+              ><strong>Senior Systems Analyst</strong> &mdash; Sberbank</span
+            >
+            <span class="date">2015 - 2017</span>
           </li>
-          <li>
-            <strong>Systems Analys</strong> at Bank Soft Systems &mdash; 2012 -
-            2015
+          <li class="job">
+            <span>
+              <strong>Systems Analys</strong> &mdash; Bank Soft Systems
+            </span>
+            <span class="date">2012 - 2015</span>
           </li>
-          <li><strong>Software Tester</strong> at uTest &mdash; 2011 - 2012</li>
+
+          <li class="job">
+            <span><strong>Software Tester</strong> &mdash; uTest </span>
+            <span class="date">2010 - 2012</span>
+          </li>
         </ul>
       </section>
     </main>
@@ -98,31 +114,38 @@
           name="leave_message"
           id="leave_message"
         >
-          <label>Your name </label>
-          <input
-            type="text"
-            name="name"
-            required="true"
-            class="message-input"
-          />
-          <br />
-          <label>Your email address</label>
-          <input
-            type="email"
-            name="email"
-            required="true"
-            class="message-input"
-          />
-          <br />
-          <label> Write your message here</label>
-          <textarea name="message" class="message-input"></textarea> <br />
+          <div class="contact-info">
+            <div class="message-name">
+              <label>Name </label>
+              <input
+                type="text"
+                name="name"
+                required="true"
+                class="message-input"
+              />
+            </div>
 
-          <div>
+            <div class="message-email">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                required="true"
+                class="message-input"
+              />
+            </div>
+          </div>
+
+          <div class="message-text">
+            <label> Message</label>
+            <textarea name="message" class="message-input"></textarea>
+          </div>
+          <div class="message-submit">
             <input type="submit" class="submit-button" />
           </div>
         </form>
       </section>
-      <section id="messages">
+      <section class="messages-list">
         <h2>Messages</h2>
         <ul class="list"></ul>
       </section>
