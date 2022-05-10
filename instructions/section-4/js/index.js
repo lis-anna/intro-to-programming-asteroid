@@ -28,6 +28,7 @@ for (let count of skills) {
 }
 
 let messageForm = document.querySelector("#leave_message");
+document.querySelector(".messages-list").style.display = "none";
 
 messageForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -35,7 +36,7 @@ messageForm.addEventListener("submit", (event) => {
   const userEmail = event.currentTarget.email.value;
   const userMessage = event.currentTarget.message.value;
   console.log(userName, userEmail, userMessage);
-  let messageSection = document.querySelector("#messages");
+  let messageSection = document.querySelector(".messages");
   let messageList = messageSection.querySelector("ul");
   let newMesssage = document.createElement("li");
   newMesssage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a> wrote: <span>${userMessage}</span> <br>`;
@@ -49,4 +50,27 @@ messageForm.addEventListener("submit", (event) => {
   newMesssage.appendChild(removeButton);
   messageList.appendChild(newMesssage);
   event.target.reset();
+  document.querySelector(".messages-list").style.display = "block";
 });
+
+var githubRequest = new XMLHttpRequest();
+githubRequest.open("GET", "https://api.github.com/users/lis-anna/repos");
+githubRequest.send();
+
+githubRequest.addEventListener("load", function () {
+  var repositories = JSON.parse(this.response);
+  console.log(repositories);
+  let projectSection = document.getElementById("projects");
+  let projectList = projectSection.querySelector("ul");
+  getProjects(repositories, projectList);
+});
+function getProjects(array, list) {
+  for (let i = 0; i < array.length; i++) {
+    let project = document.createElement("li");
+    let link = document.createElement("a");
+    link.href = `${array[i].html_url}`;
+    link.innerHTML = `${array[i].name}`;
+    project.appendChild(link);
+    list.appendChild(project);
+  }
+}
