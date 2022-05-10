@@ -6,13 +6,19 @@
 body {
   font-family: "Inter", sans-serif;
   font-weight: lighter;
-  background-color: aliceblue;
+  max-width: 960px;
+  margin: auto;
+  background-image: url("../img/forest-fog.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-size: 100% 100%;
 }
 /*header with logo and navigation menu*/
 .header {
   height: 30%;
-  background-color: lemonchiffon;
-  border-bottom: 8px solid purple;
+  background-color: #c2e5d3;
+  border-bottom: 8px solid #014421;
   margin: -10px -8px;
 }
 .logo {
@@ -41,7 +47,7 @@ body {
   list-style: none;
   margin: 0.5rem 1rem;
   padding: 0 0.5rem;
-  border: 2px solid lemonchiffon;
+  border: 2px solid #c2e5d3;
   border-radius: 5px;
   font-weight: bolder;
   font-size: 20px;
@@ -53,7 +59,7 @@ body {
 
 .menu a:hover {
   text-decoration: underline;
-  background-color: lemonchiffon;
+  background-color: #c2e5d3;
   background-clip: border-box;
 }
 
@@ -78,12 +84,13 @@ body {
   color: rgb(62, 65, 68);
   font-weight: lighter;
 }
-.experience li {
+.experience li,
+#projects li {
   margin-bottom: 1em;
   padding: 10px;
   background-color: #c4d1e1;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 /*skills section*/
@@ -93,12 +100,15 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.5em;
+  padding-left: 0px;
 }
+
 .skills li {
   text-align: center;
   padding: 0.3em 0.5rem;
-  color: rgb(79, 8, 138);
-  border: 2px solid rgb(141, 135, 222);
+  color: #014421;
+  border: 2px solid #c2e5d3;
+  background-color: #c2e5d3;
   border-radius: 5px;
   font-size: 1.125em;
   flex-grow: 1;
@@ -108,8 +118,10 @@ body {
 .messages {
   border: none;
   background-color: #c4d1e1;
-  max-width: 600px;
+  max-width: 960px;
   padding: 10px;
+  border-radius: 5px;
+  margin: auto;
 }
 
 input[type="text"],
@@ -129,7 +141,7 @@ textarea {
 input[type="submit"].submit-button {
   border-radius: 8px;
   border: none;
-  background-color: purple;
+  background-color: #014421;
   box-shadow: 6px 3px 3px gray;
   color: white;
   padding: 0.5rem 1.2rem;
