@@ -43,6 +43,7 @@ messageForm.addEventListener("submit", (event) => {
   let removeButton = document.createElement("button");
   removeButton.textContent = "remove";
   removeButton.type = "button";
+  removeButton.className = "remove_butto";
   removeButton.addEventListener("click", (event) => {
     let entry = event.target.parentNode;
     entry.remove();
@@ -53,24 +54,27 @@ messageForm.addEventListener("submit", (event) => {
   document.querySelector(".messages-list").style.display = "block";
 });
 
-var githubRequest = new XMLHttpRequest();
-githubRequest.open("GET", "https://api.github.com/users/lis-anna/repos");
-githubRequest.send();
+//var githubRequest = new XMLHttpRequest();
+//githubRequest.open("GET", "https://api.github.com/users/lis-anna/repos");
+//githubRequest.send();
 
-githubRequest.addEventListener("load", function () {
-  var repositories = JSON.parse(this.response);
-  console.log(repositories);
+function addProjects(repositories) {
+  // githubRequest.addEventListener("load", function ()
+  // var repositories = JSON.parse(this.response);
+  //console.log(repositories);
   let projectSection = document.getElementById("projects");
   let projectList = projectSection.querySelector("ul");
-  getProjects(repositories, projectList);
-});
-function getProjects(array, list) {
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < repositories.length; i++) {
     let project = document.createElement("li");
     let link = document.createElement("a");
-    link.href = `${array[i].html_url}`;
-    link.innerHTML = `${array[i].name}`;
+    link.href = `${repositories[i].html_url}`;
+    link.innerHTML = `${repositories[i].name}`;
     project.appendChild(link);
-    list.appendChild(project);
+    projectList.appendChild(project);
   }
 }
+
+fetch("https://api.github.com/users/lis-anna/repos")
+  .then((response) => response.json())
+  .then((data) => addProjects(data))
+  .catch((error) => console.log("Whoops, something went wrong!", error));
