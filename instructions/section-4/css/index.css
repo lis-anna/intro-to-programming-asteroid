@@ -157,12 +157,31 @@ input[type="submit"].submit-button {
   color: #c2e5d3;
   margin-top: 50px;
 }
-
+.connect {
+  margin-left: 8px;
+}
+.connect a {
+  color: #c2e5d3;
+}
+.connect a:hover {
+  color: #c1d83c;
+}
+.icon {
+  border-radius: 50%;
+  max-width: 30px;
+  margin: 5px;
+}
+.to-centrify {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
 @media screen and (max-width: 496px) {
   /*change appearance of navigtion links for small screen*/
   .menu {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   /*change appearance of experience list for small screens*/
@@ -179,6 +198,12 @@ input[type="submit"].submit-button {
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+  }
+  .connect ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
   }
 }
 
